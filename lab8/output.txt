@@ -1,0 +1,63 @@
+=========task1==========
+A = {x1, x2 | x1^4 + x2^4 <= 1}
+Naive method:
+n = 4, measure = 3.359375
+n = 6, measure = 3.6259765625
+n = 8, measure = 3.68914794921875
+
+Monte-Carlo's method:
+n = 100, measure = 3.88
+n = 1000, measure = 3.736
+n = 10000, measure = 3.7136
+
+
+A = {x1, x2, x3 | x1^2 + x2^2 <= 1, x1 + x2 <= x3 <= 2x2 + 3x3}
+Naive method:
+n = 4, measure = 1.477783203125
+n = 6, measure = 1.6433372497558594
+n = 8, measure = 1.6850062012672424
+
+Monte-Carlo's method:
+n = 100, measure = 2.08
+n = 1000, measure = 1.536
+n = 10000, measure = 1.7088
+
+
+=========task2==========
+integral_A (sin(exp(-x1-x2))dx1 dx2, A = {x1, x2 | x1^4 + x2^4 <= 1}
+Naive method:
+n = 4, measure = 2.000831637022042
+n = 6, measure = 2.083958922713868
+n = 8, measure = 2.102589981207094
+
+Monte-Carlo's method:
+n = 100, measure = 2.141904129937691
+n = 1000, measure = 2.0338906855042436
+n = 10000, measure = 2.1012190901459524
+
+
+=========task3==========
+
+dimension = 1,
+naive ball measure = 1.0
+ball measure by Monte Carlo = 1.0
+
+dimension = 2,
+naive ball measure = 0.640625
+ball measure by Monte Carlo = 0.7902
+
+dimension = 3,
+naive ball measure = 0.3828125
+ball measure by Monte Carlo = 0.521
+
+dimension = 4,
+naive ball measure = 0.1962890625
+ball measure by Monte Carlo = 0.3054
+
+dimension = 5,
+naive ball measure = 0.09027099609375
+ball measure by Monte Carlo = 0.1653
+
+dimension = 6,
+naive ball measure = 0.03578948974609375
+ball measure by Monte Carlo = 0.082
