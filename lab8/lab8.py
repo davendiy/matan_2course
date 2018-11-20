@@ -126,7 +126,7 @@ def check_set2(x1, x2, x3):
     """
     succ = [x1 ** 2 + x2 ** 2 <= 1,
             x1 + x2 <= x3,
-            x3 <= 2 * x2 + 3 * x3]
+            x3 <= 2 * x2 + 3 * x1]
     return all(succ)
 
 

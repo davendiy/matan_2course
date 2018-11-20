@@ -9,7 +9,7 @@
 import math
 
 
-def derivative(func, x0, dx):
+def derivative(func, x0, dx=1e-5):
     """
     функція обчислення похідної в точці (симетричний спосіб)
     :param func: функціональний тип
