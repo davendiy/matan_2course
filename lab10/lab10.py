@@ -50,6 +50,7 @@ def mass_center(curve, mass, rho, a, b):
             return tmp_args[i] * rho(*tmp_args)
 
         res.append(curve_integral(tmp_f, a, b, *curve)/mass)
+    return res
 
 
 with open('output.txt', 'w', encoding='utf-8') as file:
