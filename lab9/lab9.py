@@ -134,6 +134,8 @@ with open('output.txt', 'w', encoding='utf-8') as file:
     file.write('by Monte Carlo method - {}\n'.format(res1))
 
     file.write('\n\n============task4==============\n')
+
+    # побудувавши тіло в sage, я побачив, що його можна обмежити кубом від [-1, -1, -1] до [1, 1, 1]
     res1 = mass_center(set4, rho4, 3, [-1, -1, -1], [1, 1, 1])
     file.write('mass center of solid {(r, phi, psi) | r^2(cos^4(phi) + sin^4(phi) + cos^4(psi) + sin^4(psi)) <= 1}\n'
                'with pho = phi^2 + psi^2:\n')

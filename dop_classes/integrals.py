@@ -7,6 +7,8 @@
 # Taras Shevchenko National University of Kyiv
 # email: davendiy@gmail.com
 
+import random
+
 
 def meth_of_rect(func, a, b, n):
     """
