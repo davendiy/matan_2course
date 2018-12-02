@@ -64,8 +64,8 @@ def descartes2spherical(x1, x2, x3):
     :return: кортеж із трьох дійсних чисел
     """
     return sqrt(x1**2 + x2**2 + x3**2), \
-           atan(sqrt(x1**2 + x2**2)/x3), \
-           atan(x2/x1)
+           atan(x2/x1), \
+           atan(x3/sqrt(x1**2 + x2**2))
 
 
 def set4(x1, x2, x3):
@@ -104,7 +104,6 @@ def mass_center(check_set: callable, rho: callable, m: int, start: list, end: li
         # обчислюємо кожну координату методом Монте-Карло
         res.append(monte_carlo(tmp_f, check_set, 10000, start, end))
     return tuple(res)
-
 
 
 with open('output.txt', 'w', encoding='utf-8') as file:

@@ -1,22 +1,22 @@
 ============task1==============
 mass of plate {(x1, x2) | x1^4 + x2^4 <= 1} with rho = 2 - x1^2 - x2^2:
 by naive method (n = 4) - 4.884796142578125
-by Monte Carlo method - 5.182157743582705
+by Monte Carlo method - 5.1885963660324865
 
 
 ============task2==============
 mass of plate {(x1, x2, x3) | x1^2 + x2^2 <= 1, |x3| <= 2} with rho = x1^2 + x2^2 + x3^2:
 by naive method (n = 4) - 20.44927978515625
-by Monte Carlo method - 23.058273573344763
+by Monte Carlo method - 23.20298788928467
 
 
 ============task3==============
 mass center of solid {(x1, x2, x3) | x1^2 + x2^2 + x3^2 <= 1, x1>=0, x2>=0, x3>=0}
 with pho = x1^2 + x2^2:
-by Monte Carlo method - (0.09936952606549956, 0.09341323427291869, 0.06661625469696728)
+by Monte Carlo method - (0.09842912822220928, 0.10013899917766222, 0.06364972212553804)
 
 
 ============task4==============
 mass center of solid {(r, phi, psi) | r^2(cos^4(phi) + sin^4(phi) + cos^4(psi) + sin^4(psi)) <= 1}
 with pho = phi^2 + psi^2:
-by Monte Carlo method - (-0.024214572170130125, 0.010993075588893017, -0.0072185540377619605)
+by Monte Carlo method - (-0.0018766908566353606, 0.014002007618496924, -0.004813349325516045)

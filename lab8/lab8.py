@@ -61,7 +61,7 @@ def cube_points(center: tuple, delta: float, m: int):
         yield point + (center[m - 1] - delta,)
 
 
-def naive_integral(func: callable, check_set: callable, n: int, m: int, start: list, end: list):
+def naive_integral(func: callable, check_set: callable, n: int, m: int, start: list, end: list, deep=False):
     """ Кратна інтегральна сума на множині, яку задає функція check_set.
 
     :param func: функція на множині
@@ -75,16 +75,24 @@ def naive_integral(func: callable, check_set: callable, n: int, m: int, start: l
     delta = 1 / 2 ** n                   # довжина ребра бруса
     cube_measure = delta ** m            # міра бруса
     res = 0
+    diff = 0
     for center in msplit(n, m, start, end, delta):   # проходимо по центрах всіх брусів розбиття
         flag = True
+        count = 0
         for point in cube_points(center, delta/2, m):  # якщо всі точки бруса входять у множину,
             if not check_set(*point):
                 flag = False
-                break
+            else:
+                count += 1
         if flag:
             res += func(*center)        # то додаємо значення функції
+        elif count <= 2 and deep:
+            tmp_start = [center[0] - delta/2, center[1] - delta/2]
+            tmp_end = [center[0] + delta/2, center[1] + delta/2]
+            diff += naive_integral(func, check_set, n + 2, m, tmp_start, tmp_end)
+
     res *= cube_measure                 # в кінці домножаємо на міру куба, скориставшись дистрибутивністю
-    return res
+    return res + diff
 
 
 def monte_carlo(func: callable, check_set: callable, n: int, start: list, end: list):

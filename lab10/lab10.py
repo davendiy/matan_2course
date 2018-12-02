@@ -92,6 +92,18 @@ def curve3():
     return u1, u2
 
 
+def _a(eps):
+    """ При параметризації кривої через логарифм отримуємо невласний
+        інтеграл від sqrt(t^2 + 1) / t^5. Обмеживши цю функцію зверху функцією 2t/t^5
+        і взявши від неї інтеграл, отримуємо значення F(a) = (-2/3) / t^3 |від а до inf
+        Розв'язавши нерівність F(a) < eps отримуємо залежність a від eps
+
+    :param eps: точність
+    :return: верхня межа
+    """
+    return (2 / (3 * eps)) ** (1/3)
+
+
 def rho3(x1, x2):
     """ Функція щільності
     """
@@ -138,11 +150,13 @@ with open('output.txt', 'w', encoding='utf-8') as file:
     mcenter = mass_center(curve2(), mass_, rho2, 1, 10)
     file.write('length - {}\nmass center - {}'.format(length, mcenter))
 
-    # Не придумав нічого краще, чим напряму брати інтеграл від 1 до якогось великого числа.
-    # Результати порівнював з вольфрамом, при b == 1000 точність складає 1е-6, проте при
-    # збільшенні b точність швидко падає через переповнення
+    # обчислення невласного інтеграла з оцінкою верхньої межі
     file.write('\n\n============task3==============\n')
     file.write('curve x2 = exp(x1), x1є[1, +inf] or ((t, exp(t), tє[1, +inf]) with density rho = exp(-4x1)\n')
-    mass_ = curve_integral(rho3, np.e, 1000, curve3())
-    mcenter = mass_center(curve3(), mass_, rho3, np.e, 1000)
+
+    task_eps = 1e-8
+    a = _a(task_eps)
+    file.write('eps = {} => a = {}\n'.format(task_eps, a))
+    mass_ = curve_integral(rho3, np.e, a, curve3())
+    mcenter = mass_center(curve3(), mass_, rho3, np.e, a)
     file.write('mass - {}\nmass center - {}'.format(mass_, mcenter))

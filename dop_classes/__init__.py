@@ -12,6 +12,6 @@
 """
 
 from .multydimensional import *
-from .partions_danil import *
+# from .partions_danil import *
 from .module_plot import *
 from .solve_equations import *

@@ -1,27 +1,5 @@
-
-
-=========task3==========
-
-dimension = 1, 
-naive ball measure = 1.0
-ball measure by Monte Carlo = 1.0
-
-dimension = 2, 
-naive ball measure = 0.640625
-ball measure by Monte Carlo = 0.7902
-
-dimension = 3, 
-naive ball measure = 0.3828125
-ball measure by Monte Carlo = 0.521
-
-dimension = 4, 
-naive ball measure = 0.1962890625
-ball measure by Monte Carlo = 0.3054
-
-dimension = 5, 
-naive ball measure = 0.09027099609375
-ball measure by Monte Carlo = 0.1653
-
-dimension = 6, 
-naive ball measure = 0.03578948974609375
-ball measure by Monte Carlo = 0.082
+=========task1==========
+A = {x1, x2 | x1^4 + x2^4 <= 1}
+Naive method:
+n = 4, measure = 3.359375
+n = 6, measure = 3.6259765625
